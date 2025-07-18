@@ -57,3 +57,14 @@ services:
     - rabbitmq
     - cart
     - user
+  frontend:
+    image: suresh228devops/frontend:v1 #oindevops/frontend:v1
+    container_name: frontend
+    ports:
+    - "80:80" # As we need to expose to user's so we are giving as port.
+    depends_on:
+    - catalogue
+    - user
+    - cart
+    - shipping
+    - payment
